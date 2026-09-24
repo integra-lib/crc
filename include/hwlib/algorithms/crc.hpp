@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <span>
 
-namespace integra
+namespace hwlib::algorithms
 {
 
 // Bit-by-bit implementations: no lookup tables, so nothing is spent on flash
@@ -110,4 +110,4 @@ private:
     return stream.Value();
 }
 
-} // namespace integra
+} // namespace hwlib::algorithms

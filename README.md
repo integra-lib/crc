@@ -2,23 +2,23 @@
 
 CRC-8/NRSC-5, CRC-16/CCITT-FALSE and CRC-32/ISO-HDLC, bit-by-bit and constexpr, plus an incremental CRC-32 for data arriving in pieces.
 
-Part of [integra-lib](https://github.com/integra-lib) — architecture-independent C++20
+Part of [hwlib](https://github.com/integra-lib) — architecture-independent C++20
 components shared between firmware projects. Header-only,
 no exceptions, no RTTI.
 
 ## Use it
 
 ```bash
-git submodule add git@github.com:integra-lib/crc.git external/integra/crc
+git submodule add git@github.com:integra-lib/crc.git external/hwlib/crc
 ```
 
 ```cmake
-add_subdirectory(external/integra/crc)
-target_link_libraries(app PRIVATE Integra::crc)
+add_subdirectory(external/hwlib/crc)
+target_link_libraries(app PRIVATE Hwlib::crc)
 ```
 
 ```cpp
-#include <integra/crc.hpp>
+#include <hwlib/algorithms/crc.hpp>
 ```
 
 Each component carries its own include directory, so this header stays unreachable
@@ -31,9 +31,9 @@ Every component is released on its own, tagged `vX.Y.Z`. Pre-1.0, a minor releas
 break the API, which is why dependants accept a single minor.
 
 ```bash
-git -C external/integra/crc fetch --tags
-git -C external/integra/crc checkout v0.2.0
-git add external/integra/crc && git commit -m "build: bump crc to v0.2.0"
+git -C external/hwlib/crc fetch --tags
+git -C external/hwlib/crc checkout v0.2.0
+git add external/hwlib/crc && git commit -m "build: bump crc to v0.2.0"
 ```
 
 ## In a consumer's CI
